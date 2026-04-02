@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="grettings">Welcome</string>
+    <string name="appsname">Unram Engginering Students</string>
+    <string name="hform">Please enter your biodata</string>
+    <string name="nama">Name</string>
+    <string name="namalengkap">Masukan Nama Lengkap</string>
+    <string name="nomornim">Please enter your NIM</string>
+    <string name="jeniskelamin">Gender</string>
+    <string name="hobi">Hobby</string>
+    <string name="tampilkan_profil">Show Profile</string>
+    <string name="olahraga">Sport</string>
+    <string name="membaca">Reading</string>
+    <string name="laki_laki">Male</string>
+    <string name="perempuan">Female</string>
+</resources>

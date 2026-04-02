@@ -1,18 +1,18 @@
 <resources>
     <string name="grettings">Selamat Datang</string>
     <string name="appsname">Mahasiswa Teknik Unram</string>
-    <string name="appname">Profile Application</string>
+    <string name="appname" translatable="false">Profile Application</string>
     <string name="hform">Silahkan Masukan Biodata</string>
     <string name="nama">Nama</string>
     <string name="namalengkap">Masukan Nama Lengkap</string>
-    <string name="nim">NIM</string>
+    <string name="nim" translatable="false">NIM</string>
     <string name="nomornim">Masukan Nomor Induk Mahasiswa</string>
-    <string name="prodi">Prodi</string>
-    <string name="programstudi">Masukan Program</string>
+    <string name="prodi" translatable="false">Prodi</string>
+    <string name="programstudi" translatable="false">Masukan Program</string>
     <string-array name="list_prodi">
         <item>Pilih Program Studi</item>
         <item>Teknik Arsitektur</item>
-        <item>Teknik Elekto</item>
+        <item>Teknik Elektro</item>
         <item>Teknik Industri</item>
         <item>Teknik Informatika</item>
         <item>Teknik Mesin</item>
@@ -21,10 +21,10 @@
     <string name="jeniskelamin">Jenis Kelamin</string>
     <string name="hobi">Hobi</string>
     <string name="tampilkan_profil">Tampilkan Profil</string>
-    <string name="traveling">Traveling</string>
-    <string name="fotografi">Fotografi</string>
-    <string name="musik">Musik</string>
-    <string name="gaming">Gaming</string>
+    <string name="traveling" translatable="false">Traveling</string>
+    <string name="fotografi" translatable="false">Fotografi</string>
+    <string name="musik" translatable="false">Musik</string>
+    <string name="gaming" translatable="false">Gaming</string>
     <string name="olahraga">Olahraga</string>
     <string name="membaca">Membaca</string>
     <string name="laki_laki">Laki-laki</string>
