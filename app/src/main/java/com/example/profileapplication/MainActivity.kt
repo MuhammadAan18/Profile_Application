@@ -1,6 +1,8 @@
 package com.example.profileapplication
 
 import android.os.Bundle
+import android.util.TypedValue
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.RadioButton
 import android.widget.Toast
@@ -27,6 +29,20 @@ class MainActivity : AppCompatActivity() {
                 return position != 0
             }
 
+            //mengubah warna list 1 ke gray
+            override fun getView(position: Int, convertView: android.view.View?, parent: android.view.ViewGroup): android.view.View {
+                val view = super.getView(position, convertView, parent) as android.widget.TextView
+                if (position == 0) {
+                    // Ubah teks terpilih menjadi abu-abu jika itu adalah item pertama (hint)
+                    view.setTextColor(android.graphics.Color.GRAY)
+                    view.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
+                } else {
+                    // Warna teks setelah user memilih item yang valid
+                    view.setTextColor(android.graphics.Color.rgb(99, 5, 128)) // ungu
+                }
+                return view
+            }
+
             // Mengubah warna item pertama menjadi abu-abu agar terlihat seperti hint
             override fun getDropDownView(position: Int, convertView: android.view.View?, parent: android.view.ViewGroup): android.view.View {
                 val view = super.getDropDownView(position, convertView, parent) as android.widget.TextView
@@ -38,7 +54,6 @@ class MainActivity : AppCompatActivity() {
                 return view
             }
         }
-
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerProdi.adapter = adapter
 
@@ -86,13 +101,16 @@ class MainActivity : AppCompatActivity() {
             }
             val hobi = hobiList.joinToString(", ")
 
-            // (Opsional) Jika Anda ingin berpindah ke Activity lain, Anda bisa menggunakan Intent di sini
-            /*
-            val intent = Intent(this, ResultActivity::class.java)
-            intent.putExtra("NAMA", nama)
-            intent.putExtra("NIM", nimStr)
+            //intent
+            val intent = android.content.Intent(this@MainActivity, ProfileActivity::class.java)
+
+            intent.putExtra("nama", nama)
+            intent.putExtra("nim", nimStr)
+            intent.putExtra("prodi", prodi)
+            intent.putExtra("gender", gender)
+            intent.putExtra("hobi", hobi)
             startActivity(intent)
-            */
+
         }
     }
 }
