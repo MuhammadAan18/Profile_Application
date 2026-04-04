@@ -59,11 +59,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnSubmit.setOnClickListener {
 
-            val nama = binding.etNama.text.toString().trim()
+            val namaStr = binding.etNama.text.toString().trim()
             val nimStr = binding.etNim.text.toString().trim()
-            val prodi = binding.spinnerProdi.selectedItem?.toString() ?: ""
+            val prodiStr = binding.spinnerProdi.selectedItem?.toString() ?: ""
 
-            if (nama.isEmpty()) {
+            if (namaStr.isEmpty()) {
                 binding.etNama.error = "Nama tidak boleh kosong!"
                 binding.etNama.requestFocus()
                 return@setOnClickListener
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
                 binding.etNim.requestFocus()
                 return@setOnClickListener
             }
-            if (prodi.isEmpty()) {
+            if (prodiStr.isEmpty()) {
                 binding.etNim.error = "Program Studi tidak boleh kosong!"
                 binding.spinnerProdi.requestFocus()
                 return@setOnClickListener
@@ -101,16 +101,19 @@ class MainActivity : AppCompatActivity() {
             }
             val hobi = hobiList.joinToString(", ")
 
-            //intent
+            // 1. Masukkan semua variabel ke dalam objek UserProfile
+            val userData = UserProfile(
+                nama = namaStr,
+                nim = nimStr,
+                prodi = prodiStr,
+                gender = gender,
+                hobi = hobi
+            )
+
             val intent = android.content.Intent(this@MainActivity, ProfileActivity::class.java)
-
-            intent.putExtra("nama", nama)
-            intent.putExtra("nim", nimStr)
-            intent.putExtra("prodi", prodi)
-            intent.putExtra("gender", gender)
-            intent.putExtra("hobi", hobi)
+            intent.putExtra("dataUser", userData)
             startActivity(intent)
-
+            finish()
         }
     }
 }
